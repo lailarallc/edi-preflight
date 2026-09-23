@@ -223,3 +223,13 @@ unless noted.
   export. 254 tests passing. Deploy config shipped but `flyctl deploy`
   not run.
 - Tag: none (no deploy yet)
+
+---
+
+## Improvement History
+
+### 2026-09-23 — Audit (health check only)
+- **Findings:** 0 critical, 5 important, 3 nice-to-have
+- **Top concerns:** The Fly deploy workflow runs on every push to main with no dependency on the CI test job, so a failing commit still ships to edi.lailarallc.com (flyctl action is also pinned to @master). The three /export/* endpoints skip the 2 MB input check that /parse and /validate enforce, accepting up to the 8 MB parser ceiling into PDF generation on a 256 MB VM. HANDOFF.md stops at 2026-07-30 despite ~17 later commits (client mode, drift gate, fonts, OG), and CLAUDE.md's stack section still lists pyx12/bots-edi, pandas and weasyprint. Also: dependencies are floor-only (>=) and hand-duplicated in the Dockerfile; client-mode.yml labels say v0.2.1 while installing v0.2.2 and its error text points to per-repo secrets; README badge still points at MsShawnP; static assets have no cache-busting. 336 tests pass; canonical drift gate clean. Manual security/code-quality/data pass replaced the automated reviews.
+- **Action taken:** Audit only — no fixes this session
+- **Next review:** 2026-12-22
