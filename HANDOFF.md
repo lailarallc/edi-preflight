@@ -163,7 +163,7 @@ For things that didn't work, see FAILURES.md.
 
 **Completed:**
 - Milestone 3: Walmart 856 end-to-end — three-layer validation (structural, field-level, retailer-specific), severity tagging, chargeback-dollar attribution, web UI with two-mode tabs, PDF export. 5 Walmart 856 samples. Walmart YAML spec with fee schedule.
-- Milestone 4: Expanded 856 to all retailers — extracted shared validation into validate_856_common.py with RetailerConfig dataclass. Created slim validator modules for Amazon ($50/case), UNFI ($25/case), KeHE ($75/case), Costco ($150/pallet). 8 new samples, 4 YAML specs, 31 tests. Retailer selector dropdown with all 5 retailers.
+- Milestone 4: Expanded 856 to all retailers — extracted shared validation into validate_856_common.py with RetailerConfig dataclass. Created slim validator modules for Amazon ($50/case), UNFI ($25/case), KeHE ($75/case), Costco ($150/pallet). 8 new samples, 4 YAML specs, 31 tests. Retailer selector dropdown with all 5 retailers. <!-- label-ok: published per-retailer fee rates, no Cinderhaven figure -->
 - Milestone 5: Input validation — format-specific diagnostics for JSON/CSV/XML input, wrong-transaction-type guard in /validate endpoint, 15 tests covering 8 bad-input scenarios.
 - Milestone 6: Deploy config — Dockerfile (python:3.13-slim), fly.toml (sea region, shared-cpu-1x), .dockerignore. READMEs for rules/ (10 YAML specs) and samples/ (24 synthetic EDI files).
 
